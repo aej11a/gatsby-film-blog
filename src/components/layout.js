@@ -3,12 +3,21 @@ import { Link } from "gatsby"
 import "./layout.css"
 
 import { rhythm, scale } from "../utils/typography"
-import { useWindowSize } from "react-use"
 
 const Layout = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
+  const [width, setWidth] = React.useState(1280)
 
-  const {width} = useWindowSize()
+  const adjustWindowSize = () => {
+    if(window){
+      setWidth(window.innerWidth)
+    }
+  }
+
+  React.useEffect(() => {
+    window.addEventListener('resize', adjustWindowSize);
+    return () => window.removeEventListener('resize', adjustWindowSize)
+  }, [])
 
   const FilmStripTicks = () => {
     const divs = []
