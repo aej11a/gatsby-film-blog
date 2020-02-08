@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import "./Layout.css"
+import "./layout.css"
 
 import { rhythm, scale } from "../utils/typography"
 import { useWindowSize } from "react-use"
