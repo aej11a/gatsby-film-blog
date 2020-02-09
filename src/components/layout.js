@@ -19,6 +19,12 @@ const Layout = ({ location, children }) => {
     return () => window.removeEventListener('resize', adjustWindowSize)
   }, [])
 
+  React.useEffect(() => {
+    document.addEventListener("DOMContentLoaded", function() {
+      adjustWindowSize()
+    });
+  })
+
   const FilmStripTicks = () => {
     const divs = []
     for(let i = 0; i < width - 80; i += 60){
