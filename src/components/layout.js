@@ -20,10 +20,9 @@ const Layout = ({ location, children }) => {
   }, [])
 
   React.useEffect(() => {
-    document.addEventListener("DOMContentLoaded", function() {
-      adjustWindowSize()
-    });
-  })
+    document.addEventListener("DOMContentLoaded", adjustWindowSize);
+    return () => document.removeEventListener("DOMContentLoaded", adjustWindowSize)
+  }, [])
 
   const FilmStripTicks = () => {
     const divs = []
