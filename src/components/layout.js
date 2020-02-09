@@ -6,7 +6,7 @@ import { rhythm, scale } from "../utils/typography"
 
 const Layout = ({ location, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`
-  const [width, setWidth] = React.useState(1280)
+  const [width, setWidth] = React.useState(12800)
 
   const adjustWindowSize = () => {
     if(window){
@@ -17,11 +17,6 @@ const Layout = ({ location, children }) => {
   React.useEffect(() => {
     window.addEventListener('resize', adjustWindowSize);
     return () => window.removeEventListener('resize', adjustWindowSize)
-  }, [])
-
-  React.useEffect(() => {
-    document.addEventListener("DOMContentLoaded", adjustWindowSize);
-    return () => document.removeEventListener("DOMContentLoaded", adjustWindowSize)
   }, [])
 
   const FilmStripTicks = () => {
