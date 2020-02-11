@@ -4,9 +4,9 @@ import "./layout.css"
 
 import { rhythm, scale } from "../utils/typography"
 
-const Layout = ({ location, children }) => {
+const Layout = ({ location, children, siteTitle }) => {
   const rootPath = `${__PATH_PREFIX__}/`
-  const [width, setWidth] = React.useState(12800)
+  const [width, setWidth] = React.useState(3600)
 
   const adjustWindowSize = () => {
     if(window){
@@ -36,7 +36,12 @@ const Layout = ({ location, children }) => {
         <header className={"site-header"}>
           <FilmStripTicks/>
         </header>
-        <main>{children}</main>
+      <div className={"main-wrapper"}>
+        <main>
+          <div className={'site-title'}><h1>{siteTitle}</h1></div>
+          {children}
+        </main>
+      </div>
       <footer className={"page-footer"}>
         <FilmStripTicks/>
         {' '}
