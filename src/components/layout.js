@@ -31,7 +31,7 @@ const Layout = ({ location, children, siteTitle }) => {
     })
 
     const divs = []
-    for(let i = 0; i < width - 80; i += 40){
+    for(let i = 0; i < width - 60; i += 40){
       divs.push(<div className={"film-strip-tick"}/>)
     }
     return (
@@ -57,7 +57,11 @@ const Layout = ({ location, children, siteTitle }) => {
               color: `inherit`,
             }}
             to={`/`}
-          ><h1>{siteTitle}</h1></Link></div>
+          >
+            <h1>{siteTitle}</h1>
+          </Link>
+            by: <a href="https://github.com/aej11a">Andrew Jones</a>
+          </div>
           {children}
         </main>
       </div>
