@@ -15,17 +15,17 @@ const Layout = ({ location, children, siteTitle }) => {
   }
 
   React.useEffect(() => {
-    window.addEventListener('resize', adjustWindowSize);
-    return () => window.removeEventListener('resize', adjustWindowSize)
+    //window.addEventListener('resize', adjustWindowSize);
+    //return () => window.removeEventListener('resize', adjustWindowSize)
   }, [])
 
   const FilmStripTicks = () => {
     const divs = []
-    for(let i = 0; i < width - 80; i += 60){
+    for(let i = 0; i < width - 80; i += 40){
       divs.push(<div className={"film-strip-tick"}/>)
     }
     return (
-      <div className={"film-strip-tick-container"}>
+      <div className={"film-strip-tick-container animation-controller"}>
         {divs}
       </div>
     )
@@ -38,7 +38,14 @@ const Layout = ({ location, children, siteTitle }) => {
         </header>
       <div className={"main-wrapper"}>
         <main>
-          <div className={'site-title'}><h1>{siteTitle}</h1></div>
+          <div className={'site-title'}><Link
+            style={{
+              boxShadow: `none`,
+              textDecoration: `none`,
+              color: `inherit`,
+            }}
+            to={`/`}
+          ><h1>{siteTitle}</h1></Link></div>
           {children}
         </main>
       </div>

@@ -19,24 +19,6 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
       />
       <article>
         <header>
-
-          <h3
-            style={{
-              fontFamily: `Montserrat, sans-serif`,
-              marginTop: 0,
-            }}
-          >
-            <Link
-              style={{
-                boxShadow: `none`,
-                textDecoration: `none`,
-                color: `inherit`,
-              }}
-              to={`/`}
-            >
-              {siteTitle}
-            </Link>
-          </h3>
           <h1
             style={{
               marginBottom: 0,

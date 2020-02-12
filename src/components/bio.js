@@ -52,9 +52,6 @@ const Bio = () => {
           borderRadius: `50%`,
         }}
       />
-      <p>
-        Bio here if you wanna
-      </p>
     </div>
   )
 }
