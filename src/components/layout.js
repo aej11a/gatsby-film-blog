@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import "./layout.css"
 
@@ -20,13 +20,25 @@ const Layout = ({ location, children, siteTitle }) => {
   }, [])
 
   const FilmStripTicks = () => {
+
+    const [isAnimating, setIsAnimating] = useState(true)
+
+    useEffect(() => {
+
+      const timeoutFunc = () => setIsAnimating(false)
+
+      setTimeout(timeoutFunc, 3250)
+    })
+
     const divs = []
     for(let i = 0; i < width - 80; i += 40){
       divs.push(<div className={"film-strip-tick"}/>)
     }
     return (
-      <div className={"film-strip-tick-container animation-controller"}>
-        {divs}
+      <div className={"film-strip-tick-container"}>
+        <div className={isAnimating ? "animation-controller" : null}>
+          {divs}
+        </div>
       </div>
     )
   }
